@@ -1,4 +1,21 @@
 PracticasValor::Application.routes.draw do
+  
+  devise_for :users
+
+  root :to => "general#show"
+  
+  resources :general do
+      collection do
+        
+      end
+  end
+  
+  resources :admin do
+    collection do 
+      post 'login', :action=>'login' 
+    end
+  end  
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

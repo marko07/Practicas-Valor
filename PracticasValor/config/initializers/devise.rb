@@ -206,4 +206,35 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+  
+#  config.warden do |manager|
+#    manager.strategies.add(:validate_user_role) do 
+#      def valid?
+#        params[:user]
+#      end
+#
+#      def authenticate!
+#        u = User.find_by_email(params[:user][:email])
+#        puts params.inspect
+#        if u
+#          if u.user_role_id != 3
+#            if u.valid_password?(params[:user][:password])
+#              success!(u)
+#            else
+#              fail!('Invalid email or password.')
+#            end  
+#          else
+#            fail!('Please log in on your mobile app.')
+#          end
+#          
+#         else
+#           fail!('Invalid email or password.')
+#        end 
+#      end
+#    end
+#
+#     #manager.intercept_401 = true
+#     manager.default_strategies(:scope => :user).unshift :validate_user_role
+#  end
+  
 end

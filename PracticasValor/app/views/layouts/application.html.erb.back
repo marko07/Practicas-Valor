@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Name       : Captive Green 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20111225
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<%= render :partial => "/shared/head" %>
+<body>
+<div id="wrapper">
+  
+  <div id="login_admin_users" style="display:none">
+    <div class="loginContent">        
+              
+     <% form_tag (:controller => :admin, :action => :login ) do %>  
+      <label for="log"><b>Username: </b></label>
+      
+      <%= text_field_tag :email %>
+      <label for="pwd"><b>Password:</b></label>
+      <%= password_field_tag :email %>
+      
+      <%= submit_tag 'Submit' %>
+    
+    
+       <div class="left">
+        <label for="rememberme"> <%= radio_button_tag :tipo, 1 %> Administrador Gen</label>      
+       </div>
+       <div class="left">
+        <label for="rememberme"> <%= radio_button_tag :tipo, 2 %> Administrador PV</label>      
+       </div>
+       <div class="left">
+        <label for="rememberme"> <%= radio_button_tag :tipo, 3 %> Administrador BE</label>
+       </div>
+       <div class="left">
+        <label for="rememberme"> <%= radio_button_tag :tipo, 4 %> Administrador BI</label>
+       </div>     
+    </div>
+     <% end %>
+    <div class="loginClose"><a href="#" id="closeLogin">Cerrar Panel</a></div>
+  </div>
+  
+  <div id="wrapper2">    
+    <div id="header" class="container">      
+      <div id="logo">
+        <h1><a href="#">Practicas <span> Valor</span></a></h1>
+      </div>
+      <div id="menu">
+        <div id="admin_tab_login"><a href="#" onclick="show_login_admin_div();">admin | login</a></div>
+        <ul>
+          <li class="current_page_item"><a href="#">Homepage</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="banner"></div>
+    <!-- end #header -->
+    <div id="page">
+      <div id="content">
+        <p class="notice"><%= notice %></p>
+        <p class="flash"><%= flash %></p>
+        <div class="post">
+          <%= current_user %>
+          <h2 class="title"><a href="#">Bienvenidos al Sistema De consultas De Practicas de Valor </a></h2>
+          <div style="clear: both;">&nbsp;</div>
+          <div class="entry">
+            <p>Aqui encontrara la posibilidad de:
+            </p>
+              <p>  Consultar: observar las diferentes Practicas de Valor que se encuentren almacenadas, tambien podra ingresar su experiencia en caso de haber puesto la Practica de Valor a funcionar.</p>
+              <p>  Proponer: cualquier miembro de la organizacion podra proponer la investigacion y desarrollo de una Practica de Valor, esta sujeto a aceptacion del Administrador General</p>
+              <p>  Registrar Exp: una ves puesta en practica una Practica de Valor, usted podra regitrar sus experiencia, comentarios, mejoras o aceptacion de dicha Practica de Valor</p>
+            </p>
+          </div>
+        </div>
+        <div class="post">
+          <h2 class="title"><a href="#">Importancia</a></h2>
+          <div style="clear: both;">&nbsp;</div>
+          <div class="entry">
+            <p>Comprender  y gestionar el conocimiento colectivo en acción que se genera a través de la  interacción cotidiana entre 
+              personas de un equipo natural de trabajo es un  aspecto fundamental para la supervivencia y la evolución de las organizaciones. 
+               El concepto y modelo de Prácticas de Valor (PVs) 
+            </p>   
+            <p class="links"><a href="#" class="more">Read More</a><a href="#" title="b0x" class="comments">Comments</a></p>
+          </div>
+        </div>
+        <div style="clear: both;">&nbsp;</div>
+      </div>
+      <!-- end #content -->
+      <div id="sidebar">
+        <ul>
+          <li>
+            <div id="search" >
+              <form method="get" action="#">
+                <div>
+                  <input type="text" name="s" id="search-text" value="" />
+                  <input type="submit" id="search-submit" value="GO" />
+                </div>
+              </form>
+            </div>
+            <div style="clear: both;">&nbsp;</div>
+          </li>
+          <li>
+            <h2>Practicas de Valor</h2>
+            <p>Su conociento es lo mas importante para nuestra empresa.</p>
+          </li>
+            <%= render :partial => "/shared/categories_link" %>
+        </ul>
+      </div>
+      <!-- end #sidebar -->
+      <div style="clear: both;">&nbsp;</div>
+    </div>
+    <!-- end #page -->
+    <div id="footer">
+      <p>Copyright (c) 2011 Sitename.com. All rights reserved. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+    </div>
+  </div>
+</div>
+<!-- end #footer -->
+</body>
+</html>

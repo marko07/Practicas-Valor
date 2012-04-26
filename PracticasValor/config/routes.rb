@@ -1,12 +1,11 @@
 PracticasValor::Application.routes.draw do
   
-  devise_for :users
+  devise_for :users, :controllers => { :admin => "admin/index" }
 
   root :to => "general#show"
   
   resources :general do
-      collection do
-        
+      collection do        
       end
   end
   

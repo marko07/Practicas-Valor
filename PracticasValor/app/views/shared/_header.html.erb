@@ -1,0 +1,73 @@
++<div id="wrapper">
+  
+  <div id="login_admin_users" style="display:none">
+    <div class="loginContent">        
+              
+
+    
+	<% if user_signed_in? %>
+	<div class="userOptions">
+		<span class="karlaBld16pt434343 verticalAlignTop">Hello, <%=current_user.first_name%></span>
+		<span class="space10px"></span>
+		<%= link_to("Dashboard", "/", :class=> "karla16pt434343 verticalAlignTop") %>
+		<span class="space10px"></span>
+		<%= link_to("", destroy_user_session_path, :id=> "signOutBtn") %>
+	</div>
+	<% else %>
+		<%= form_for(resource_forgot, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			<div class="label">
+				<span class="karla14pt434343 label">Login</span>
+				<%= f.text_field :email, :class => "inputTxt", :value => ( params[:controller] == 'devise/sessions'? (params[:user].nil?? '' : params[:user][:email]) : '')%>
+				<br />
+				<%= f.check_box :remember_me, :class => "styled" %>
+				<span class="karla10pt434343 rememberMeLbl">Remember Me</span>
+			</div>
+			<div class="label">
+				<div class="karla14pt434343 label">Password</div>
+				<%= f.password_field :password, :class => "inputTxt" %>
+				<br />
+				<%= link_to "Forgot your password?", new_password_path(resource_name), :class => "karla10pt434343", :style => "padding-left: 80px;" %>	
+			</div>
+			<div >
+				<%= f.submit '', :id => "loginBtn" %>
+				<br />
+			</div>
+	       <div class="left">
+	        <label for="rememberme"> <%= radio_button_tag :tipo, 1 %> Administrador Gen</label>      
+	       </div>
+	       <div class="left">
+	        <label for="rememberme"> <%= radio_button_tag :tipo, 2 %> Administrador PV</label>      
+	       </div>
+	       <div class="left">
+	        <label for="rememberme"> <%= radio_button_tag :tipo, 3 %> Administrador BE</label>
+	       </div>
+	       <div class="left">
+	        <label for="rememberme"> <%= radio_button_tag :tipo, 4 %> Administrador BI</label>
+	       </div> 			
+			<br />
+			<div class="errorDiv">
+			<% flash.each do |name, msg| %>
+				<span class="karlaBld13ptEC4E1B"><%= msg%></span>
+			<% end %>
+			</div>
+		<% end %>
+	<% end %>    
+ 
+    
+	</div>
+  </div>
+  
+  <div id="wrapper2">    
+    <div id="header" class="container">      
+      <div id="logo">
+        <h1><a href="#">Practicas <span> Valor</span></a></h1>
+      </div>
+      <div id="menu">
+        <div id="admin_tab_login"><a href="#" onclick="show_login_admin_div();">admin | login</a></div>
+        <ul>
+          <li class="current_page_item"><a href="#">Homepage</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="banner"></div>

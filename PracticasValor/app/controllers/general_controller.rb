@@ -1,8 +1,8 @@
 class GeneralController < ApplicationController
   
-  protect_from_forgery
-    
-  def show
+
+  def show    
     
   end
+  
 end

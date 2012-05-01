@@ -1,7 +1,8 @@
 PracticasValor::Application.routes.draw do
   
   devise_for :users, :controllers => { :admin => "admin/index" }
-
+    
+    
   root :to => "general#show"
   
   resources :general do

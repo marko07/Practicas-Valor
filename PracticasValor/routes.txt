@@ -1,0 +1,29 @@
+        new_user_session GET    /users/sign_in(.:format)       {:action=>"new", :controller=>"devise/sessions"}
+            user_session POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
+    destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}
+           user_password POST   /users/password(.:format)      {:action=>"create", :controller=>"devise/passwords"}
+       new_user_password GET    /users/password/new(.:format)  {:action=>"new", :controller=>"devise/passwords"}
+      edit_user_password GET    /users/password/edit(.:format) {:action=>"edit", :controller=>"devise/passwords"}
+                         PUT    /users/password(.:format)      {:action=>"update", :controller=>"devise/passwords"}
+cancel_user_registration GET    /users/cancel(.:format)        {:action=>"cancel", :controller=>"devise/registrations"}
+       user_registration POST   /users(.:format)               {:action=>"create", :controller=>"devise/registrations"}
+   new_user_registration GET    /users/sign_up(.:format)       {:action=>"new", :controller=>"devise/registrations"}
+  edit_user_registration GET    /users/edit(.:format)          {:action=>"edit", :controller=>"devise/registrations"}
+                         PUT    /users(.:format)               {:action=>"update", :controller=>"devise/registrations"}
+                         DELETE /users(.:format)               {:action=>"destroy", :controller=>"devise/registrations"}
+                    root        /(.:format)                    {:action=>"show", :controller=>"general"}
+           general_index GET    /general(.:format)             {:action=>"index", :controller=>"general"}
+                         POST   /general(.:format)             {:action=>"create", :controller=>"general"}
+             new_general GET    /general/new(.:format)         {:action=>"new", :controller=>"general"}
+            edit_general GET    /general/:id/edit(.:format)    {:action=>"edit", :controller=>"general"}
+                 general GET    /general/:id(.:format)         {:action=>"show", :controller=>"general"}
+                         PUT    /general/:id(.:format)         {:action=>"update", :controller=>"general"}
+                         DELETE /general/:id(.:format)         {:action=>"destroy", :controller=>"general"}
+       login_admin_index POST   /admin/login(.:format)         {:action=>"login", :controller=>"admin"}
+             admin_index GET    /admin(.:format)               {:action=>"index", :controller=>"admin"}
+                         POST   /admin(.:format)               {:action=>"create", :controller=>"admin"}
+               new_admin GET    /admin/new(.:format)           {:action=>"new", :controller=>"admin"}
+              edit_admin GET    /admin/:id/edit(.:format)      {:action=>"edit", :controller=>"admin"}
+                   admin GET    /admin/:id(.:format)           {:action=>"show", :controller=>"admin"}
+                         PUT    /admin/:id(.:format)           {:action=>"update", :controller=>"admin"}
+                         DELETE /admin/:id(.:format)           {:action=>"destroy", :controller=>"admin"}

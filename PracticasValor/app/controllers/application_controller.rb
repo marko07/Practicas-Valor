@@ -1,9 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  
-  protect_from_forgery
-  
+ 
   #validate is a user log in
   def is_user_authenticate
 
@@ -17,6 +15,10 @@ class ApplicationController < ActionController::Base
   
   def check_services_authentification_token
     
+  end  
+  
+  def after_sign_in_path_for(resource)   
+    admin_index_path  
   end
   
   protected
@@ -43,5 +45,6 @@ class ApplicationController < ActionController::Base
   def error_response(code, message)
     render :json => {:success=>false,:error_code => code,:error_msg => message}
   end
+  
   
 end

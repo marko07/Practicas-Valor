@@ -5,3 +5,9 @@ function show_login_admin_div()
 {
   document.getElementById('login_admin_users').toggle();
 }
+
+jQuery(function() {
+	
+	
+	
+});

@@ -3,19 +3,19 @@ class AdminController < ApplicationController
   layout 'application'
   before_filter :is_user_authenticate
   
-#  def login
-#    user = User.find(:first, :conditions => ["email = ?", params[:email]])
-#    valid = user.valid_password?(params[:password]) unless user.nil?
-#    
-#    if valid
-#      redirect_to :action => :index
-#    else
-#      redirect_to :controller => :general, :action => :show
-#    end
-#  end
   
   def index
-    
+    @value_practices_list = ValuePractice.find_all_by_user_id(current_user.id)
+  end
+  
+  def select_an_pv
+    params[:id]
+  end
+  
+  def caracterizacion
+  end
+  
+  def benchmarking_externo
   end
   
 end

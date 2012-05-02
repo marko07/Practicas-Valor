@@ -10,7 +10,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120407212444) do
+ActiveRecord::Schema.define(:version => 20120501155932) do
+
+  create_table "internal_benchmarkings", :force => true do |t|
+    t.integer "value_practice_id"
+    t.string  "name"
+    t.string  "reference"
+    t.string  "relevant_elements"
+    t.string  "description"
+    t.string  "domain_level"
+  end
+
+  create_table "recognitions", :force => true do |t|
+    t.integer "value_practice_id"
+    t.string  "problem"
+    t.string  "solution"
+    t.string  "description"
+    t.string  "analysis"
+    t.string  "experience"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email"
@@ -34,5 +52,14 @@ ActiveRecord::Schema.define(:version => 20120407212444) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "value_practices", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "recognition_id"
+    t.integer  "internal_benchmarking_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

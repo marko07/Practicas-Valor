@@ -1,8 +1,24 @@
 <div id="div_menu_admin">
-	<span>Panel de Control</span>
-	<div>Caracterizacion</div>
+	<span id="span_left_text">Por cada practica de valor, usted puede... Por cada practica de valor, usted puede...Por cada practica de valor, usted puede...
+		Por cada practica de valor, usted puede...Por cada practica de valor, usted puede...Por cada practica de valor, usted puede...</span>
 </div>
 <div id="div_content_admin">
-	<span>Practicas de Valor</span>
+	<div id="div_content_admin_change">
+	<span>Lista Practicas de Valor</span>
+	<% @value_practices_list.each do |value_practice| %>
+		<div id="one_pv_div">
+			<span class="value_practice_active">Activa?</span>
+			<span class="value_practice_active_vaue"><%= value_practice.active%> </span>
+			<span class="value_practice_name">Nombre</span>
+			<span class="value_practice_name_value"><%= value_practice.active%></span>			
+			<span class="value_practice_problem">Problema</span>
+			<span class="value_practice_problem_value"><%= value_practice.problem%></span>
+			<span class="value_practice_solution">Solucion</span>
+			<span class="value_practice_solution_value"><%= value_practice.solution%></span>
+			<%= link_to 'Seleccionar', "#"%>
+			
+	<% end %>
+		</div>	
+	</div>
 </div>
 

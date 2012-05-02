@@ -9,4 +9,6 @@ class User < ActiveRecord::Base
   validates :first_name,:last_name,:email_confirmation,:password_confirmation, :presence => true, :if => "(self.id == 0 || self.id == nil )"
   validates :email, :confirmation => true
   validates_format_of :phone, :message => "must be a valid telephone number.", :with => /^[0-9\-\s()]*$/, :allow_blank => true
+  
+  has_many :value_practices
 end

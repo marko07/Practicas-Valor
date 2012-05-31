@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120501155932) do
     t.integer  "user_id"
     t.integer  "recognition_id"
     t.integer  "internal_benchmarking_id"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

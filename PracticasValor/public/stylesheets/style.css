@@ -55,7 +55,7 @@ a:hover {
 }
 
 #wrapper2 {
-	background: url("/images/image_top.png") no-repeat center top;
+	background: url("/images/image_top.png") no-repeat center top;display: inline-block;
 }
 
 .container {
@@ -70,6 +70,7 @@ a:hover {
 	height: 100px;
 	margin: 0px auto;
 	padding: 0px;
+	display: inline-block;
 }
 
 /* Logo */
@@ -391,6 +392,7 @@ a:hover {
 	padding: 20px 0px;
 	background: #3D3630;
 	color: #949085;
+	display: inline-block;
 }
 
 #footer p {

@@ -5,6 +5,7 @@ class AddTableValuePractice < ActiveRecord::Migration
       t.integer :user_id
       t.integer :recognition_id
       t.integer :internal_benchmarking_id
+      t.boolean :active
       t.timestamps
     end
   end

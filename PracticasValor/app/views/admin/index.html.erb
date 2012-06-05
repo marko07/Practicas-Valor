@@ -5,13 +5,16 @@
 <div id="div_content_admin">
 	<div id="div_content_admin_change">
 	<span>Lista Practicas de Valor</span>
+	<table>
+		<td>Activa?</td>
+		<td>Nombre</td>
+	</table>
 	<% @value_practices_list.each do |value_practice| %>
 		<div id="one_pv_div">
-			<span class="value_practice_active">Activa?</span>
+
 			<span class="value_practice_active_vaue"><%= value_practice.active%> </span>
-			<span class="value_practice_name">Nombre</span>
 			<span class="value_practice_name_value"><%= value_practice.name%></span>			
-			<%= link_to 'Seleccionar', "#"%>			
+			<%= link_to 'Seleccionar', {:action => :edit, :id => value_practice.id}%>			
 	<% end %>
 		</div>	
 	</div>

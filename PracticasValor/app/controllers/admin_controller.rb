@@ -12,10 +12,14 @@ class AdminController < ApplicationController
     params[:id]
   end
   
-  def caracterizacion
+  def recognition
   end
   
   def benchmarking_externo
+  end
+  
+  def edit
+    @pv = ValuePractice.find(params[:id])
   end
   
 end

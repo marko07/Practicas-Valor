@@ -1,0 +1,9 @@
+<div id="div_menu_admin">
+	<span id="span_left_text">Menu</span>
+	<%= link_to 'Caracterizacion', {:action => :recognition, :id => @pv.id}, :remote => true %> </br>
+	<%= link_to 'Benchmarking Interno', {:action => :benchmarking_externo, :id => @pv.id}%></br>
+	<%= link_to 'Benchmarking Externo', {:action => :benchmarking_externo, :id => @pv.id}%></br>
+</div>
+<div id="div_content_admin">
+recognition
+</div>

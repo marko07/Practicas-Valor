@@ -13,9 +13,10 @@ PracticasValor::Application.routes.draw do
   resources :admin do
     collection do 
       post 'login', :action=>'login' 
-      get '/caracterizacion', :action => :caracterizacion
+      get '/recognition', :action => :recognition
       get '/benchmarking_externo', :action => :benchmarking_externo
       get '/select_an_pv/:id', :action => :select_an_pv
+      
     end
   end  
   
